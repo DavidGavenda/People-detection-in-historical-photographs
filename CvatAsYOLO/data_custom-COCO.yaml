@@ -1,0 +1,5 @@
+train: ./TrainCOCOadjusted
+val: ./ValCOCO
+
+nc: 1
+names: ["person"]

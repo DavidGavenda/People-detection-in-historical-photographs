@@ -1,0 +1,5 @@
+train: ./TrainCOCOCycleGAN
+val: ./ValCOCO
+
+nc: 1
+names: ["person"]
