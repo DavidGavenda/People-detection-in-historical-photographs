@@ -1,7 +1,7 @@
 # People-detection-in-historical-photographs
 Master thesis on topic of People detection in historical photographs
 
-Author : Bc. Dávid Gavenda
+Author : Bc. Dávid Gavenda <br />
 Supervisor: Ing. Zuzana Rábeková
 
 [Link to Master thesis in CRZP (slovak language)](https://opac.crzp.sk/?fn=detailBiblioFormChildC13DQK&sid=EC7951772ACC837B5F7DC5A56A1E&seo=CRZP-detail-kniha)
@@ -46,6 +46,10 @@ We found that Deoldify almost always worsened the results. Even though the image
 | Microsoft-AI-HR             | 460%            | -0.002           | 0.012         | 0.01      |
 
 * all changes were difference based on model YOLOv8l with confidence = 0.15 which resulted in highest F1 value 
+
+![Diagram](yolov8lconfidence.png)
+
+Graph comparing all increments of confidence between 0.05 and 0.95 for YOLOv8l model
 
 # Project Overview
 
