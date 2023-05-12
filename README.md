@@ -47,9 +47,11 @@ We found that Deoldify almost always worsened the results. Even though the image
 
 * all changes were difference based on model YOLOv8l with confidence = 0.15 which resulted in highest F1 value 
 
+
+## Graph comparing all increments of confidence between 0.05 and 0.95 for YOLOv8l model
+
 ![Diagram](yolov8lconfidence.png)
 
-Graph comparing all increments of confidence between 0.05 and 0.95 for YOLOv8l model
 
 # Project Overview
 
