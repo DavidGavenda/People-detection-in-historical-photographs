@@ -1,9 +1,51 @@
 # People-detection-in-historical-photographs
 Master thesis on topic of People detection in historical photographs
 
+Author : Bc. Dávid Gavenda
+Supervisor: Ing. Zuzana Rábeková
+
+[Link to Master thesis in CRZP (slovak language)](https://opac.crzp.sk/?fn=detailBiblioFormChildC13DQK&sid=EC7951772ACC837B5F7DC5A56A1E&seo=CRZP-detail-kniha)
+
 ## Abstract 
 
 The thesis delves into the issue of detecting individuals in digitized historical photographs. It examines the challenging factors that distinguish historical photographs from regular ones, on which detection is typically conducted and existing detectors are trained. It contrasts the performance of current detectors on our own labeled collection of historical photographs, which encapsulate scenes from everyday life. The thesis also investigates methods of photo restoration and the influence of such restoration on detection models. Furthermore, it explores the transfer learning of existing models with the aim of achieving better results, and it includes an analysis of the findings obtained. 
+
+## Top 10 models
+
+The analysis of the top 10 models on the validation set (see table below) clearly demonstrated that the most effective way to fine-tune models is to use original photos. The YOLOv8l-custom model, which was trained on these original photos, achieved a precision of 0.749, a recall of 0.724, and an F1 score of 0.737, which was superior compared to the other models in the table. When evaluating the other models, we can observe that the best models achieved precision values ranging from 0.742 to 0.886, recall values ranging from 0.555 to 0.724, and F1 scores ranging from 0.668 to 0.737.
+
+| Model                           | Precision | Recall | F1    |
+|---------------------------------|-----------|--------|-------|
+| YOLOv8l-custom                  | 0.749     | 0.724  | 0.737 |
+| YOLOv8x6-custom                 | 0.78      | 0.647  | 0.708 |
+| YOLOv7-D6                       | 0.868     | 0.579  | 0.695 |
+| YOLOv7-E6                       | 0.876     | 0.573  | 0.693 |
+| YOLOv7-E6E                      | 0.873     | 0.566  | 0.687 |
+| YOLOv7-W6                       | 0.886     | 0.555  | 0.683 |
+| YOLOv8l                         | 0.792     | 0.598  | 0.681 |
+| faster-rcnn-R-101-FPN-3x        | 0.742     | 0.612  | 0.671 |
+| faster-rcnn-X-101-32x8d-FPN-3x  | 0.749     | 0.608  | 0.671 |
+| YOLOv8l-cyclegan                | 0.755     | 0.6    | 0.668 |
+
+In total 70+ models were tested and their results and confusion matrices can be found withing this repository 
+
+[Access the Custom models](https://drive.google.com/drive/folders/1SU0OsNtJ4glwEIKVc9N8b3yXbCZomf2c?usp=share_link)
+
+## Restoration
+
+We found that Deoldify almost always worsened the results. Even though the images are more colorful and pleasing to the eye, the overall quality did not improve. The GFP-GAN was able to improve overall results the best, and even though precision decreased, the F1 value increased the most. The solution from Microsoft achieved the second-best results at the highest settings. The dataset size increased by 460%, while the resolution remained the same, but the format changed to .png. The best results were achieved by restoring photos using GFP-GAN, but it is still only a minor improvement.
+
+| Type                        | Size Change (%) | Precision Change | Recall Change | F1 Change |
+| ----------------------------|-----------------|------------------|---------------|-----------|
+| Deoldify-Artistic           | 39%             | 0                | -0.02         | -0.02     |
+| Deoldify-Standard           | 39%             | 0.004            | -0.02         | -0.02     |
+| **GFP-GAN**                 | 93%             | -0.01            | 0.016         | 0.012     |
+| GFP-GAN-Deoldify-Standard   | 39%             | 0.004            | -0.02         | -0.02     |
+| GFP-GAN-Deoldify-Artistic   | 39%             | 0                | -0.02         | -0.02     |
+| Microsoft-AI                | 461%            | -0.002           | 0.012         | 0.01      |
+| Microsoft-AI-HR             | 460%            | -0.002           | 0.012         | 0.01      |
+
+* all changes were difference based on model YOLOv8l with confidence = 0.15 which resulted in highest F1 value 
 
 # Project Overview
 
