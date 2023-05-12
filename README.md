@@ -52,6 +52,15 @@ We found that Deoldify almost always worsened the results. Even though the image
 
 ![Diagram](yolov8lconfidence.png)
 
+## Graph comparing best F1 values based on best model for respective resolution
+
+![Diagram](graphbyresolution.jpg)
+
+## Graph comparing best F1 values and speed based on best model for respective year
+
+![Diagram](graphbyspeedandyear.jpg)
+
+Testing was done on Nvidia RTX 3060 Ti and Ryzen 5600x with 64GB of RAM.
 
 # Project Overview
 
