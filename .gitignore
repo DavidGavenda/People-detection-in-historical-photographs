@@ -1,3 +1,16 @@
+# Added by hand
+
+CvatAsYOLO/datasets/
+CvatAsYOLO/runs/
+CycleGan/
+GAN/
+OnlyVal/
+Resized/
+Restored/
+runs/
+SOTA/
+Splitter/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
