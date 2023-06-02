@@ -2,7 +2,7 @@
 Master thesis on topic of People detection in historical photographs
 
 Author : Bc. Dávid Gavenda <br />
-Supervisor: Ing. Zuzana Rábeková
+Supervisor: Ing. Zuzana Rábeková <br />
 Final grade: A
 
 [Link to Master thesis in CRZP (slovak language)](https://opac.crzp.sk/?fn=detailBiblioFormChildC13DQK&sid=EC7951772ACC837B5F7DC5A56A1E&seo=CRZP-detail-kniha)
